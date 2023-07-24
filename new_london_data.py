@@ -8,7 +8,7 @@ def get_weather_data(api_key, date):
     response = requests.get(url)
     data = response.json()
 
-    # Find the forecast data for the given date
+   
     forecast_data = next(item for item in data["list"] if item["dt_txt"].startswith(date))
 
     temperature = forecast_data["main"]["temp"]
@@ -17,7 +17,7 @@ def get_weather_data(api_key, date):
 
     return temperature, wind_speed, pressure
 
-# Replace "YOUR_API_KEY" with your actual API key
+
 api_key = "6e5a74718162d859ec78432283552b83"
 date = input("Enter the date (YYYY-MM-DD): ")
 while True:
